@@ -4,32 +4,32 @@ background-repeat: no-repeat;
 /*border:5px solid gray;*/
 padding-left: 50px;
 padding-bottom: 50px;
-width: 600px;
-height: 600px;
+width: 900px;
+height: 900px;
 }
 h1{
-	color: white;
+	color: black;
     font-family: open-sans;
     font-weight: lighter;
 }
 h4{
-    color: white;
+    color: black;
     font-family: open-sans;
     font-weight: lighter;
 }
 #weatherInfo{
-    color: white;
+    color: black;
     font-family: open-sans;
     font-weight: lighter;
     font-size: 18px;
 	width: 500px;
     padding: 10px;
-    /*border: 3px solid white;*/
+    /*border: 3px solid black;*/
     margin: 0;
 }
 
 #cityName{
-    color: white;
+    color: black;
     font-family: open-sans;
     font-weight: lighter;
 	font-size: 25px;
