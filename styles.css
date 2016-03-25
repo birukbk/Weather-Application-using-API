@@ -1,0 +1,27 @@
+body {
+font-family: Tahoma, arial, sans-serif;
+border:5px solid gray;
+padding-left: 50px;
+padding-bottom: 50px;
+width: 600px;
+}
+h1{
+	color: #554000;
+}
+#weatherInfo{
+	width: 500px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
+}
+
+#cityName{
+	font-size: 20px;
+	width: 500px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
+    border-bottom:0px;
+}
+
+
