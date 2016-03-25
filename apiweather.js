@@ -25,6 +25,15 @@
  			var windSpeed=	response.wind.speed;
  			var windDirection=	response.wind.deg;
  			var date= response.dt;
+ 			var icon= response.weather[0].icon;
+ 		
+ 			
+ 			var img = document.createElement("IMG");
+			img.src = 'http://openweathermap.org/img/w/'+icon+'.png';
+			$('#imgDiv').empty();
+			document.getElementById('imgDiv').appendChild(img);
+
+
  			
  		
 
@@ -34,10 +43,12 @@
  			if ($('#cityName').attr("hidden")) {
 					$('#cityName').show();
 				}
+			
 			//document.body.style.backgroundImage = "url('Bitmap.png')";
-			//document.getElementById("weatherInfo").style.backgroundImage = "url('Bitmap.png')";
+			//document.getElementById("icon").style.backgroundImage = "url('')";
+			
  			$('#weatherInfo').empty().append(
- 				'Weather Conditions: '+ weatherConditions + '</br>'+
+ 				'Weather Conditions: '+ weatherConditions + '</br>'+ 
  				'Temperature :'+ toCelsius(temprature) + '</br>'+
  				'Wind Speed :'+ toMilesPerHour(windSpeed) + '</br>' +
  				'Wind Direction: ' + toTextualDescription(windDirection));
@@ -101,5 +112,4 @@ function  toTextualDescription(degree){
 }
 
 
- 
 		 
