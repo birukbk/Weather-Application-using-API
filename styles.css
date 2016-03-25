@@ -1,5 +1,6 @@
 body {
 font-family: Tahoma, arial, sans-serif;
+background-image:url("Bitmap.png");
 background-repeat: no-repeat;
 /*border:5px solid gray;*/
 padding-left: 50px;
