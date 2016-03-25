@@ -62,9 +62,9 @@
  	return tempInCelsius +'°C';
  }
 /**
- * converts speed in knots to miles per hour
+ * converts speed from knots to miles per hour
  * @param  {speed in Knots}
- * @return {speed in mph concatenated with mph}
+ * @return {speed in mph concatenated with 'mph'}
  */
  function toMilesPerHour(knots){
  	var speedInMilesPerHour=  Math.round(knots * 1.15077945); //1 Knot = 1.15077945 mph
@@ -77,7 +77,7 @@
  */
  function toDD_MM_YY_format(unixTimeStamp){
  	var d = new Date(unixTimeStamp * 1000);
- 	var month = (d.getMonth())+1; //unix time stamp month starts from 0.
+ 	var month = (d.getMonth())+1; //UNIX time stamp month starts from 0.
 	var formattedDate = d.getDate() + "-" + month + "-" + d.getFullYear();
 	return formattedDate;
  }
