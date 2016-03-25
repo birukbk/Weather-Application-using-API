@@ -1,25 +1,42 @@
 body {
 font-family: Tahoma, arial, sans-serif;
-border:5px solid gray;
+background-repeat: no-repeat;
+/*border:5px solid gray;*/
 padding-left: 50px;
 padding-bottom: 50px;
 width: 600px;
+height: 600px;
 }
 h1{
-	color: #554000;
+	color: white;
+    font-family: open-sans;
+    font-weight: lighter;
+}
+h4{
+    color: white;
+    font-family: open-sans;
+    font-weight: lighter;
 }
 #weatherInfo{
+    color: white;
+    font-family: open-sans;
+    font-weight: lighter;
+    font-size: 18px;
 	width: 500px;
     padding: 10px;
-    border: 5px solid gray;
+    /*border: 3px solid white;*/
     margin: 0;
 }
 
 #cityName{
-	font-size: 20px;
-	width: 500px;
-    padding: 10px;
-    border: 5px solid gray;
+    color: white;
+    font-family: open-sans;
+    font-weight: lighter;
+	font-size: 25px;
+    
+	/*width: 500px;*/
+    /*padding: 10px;*/
+    /*border: 5px solid gray;*/
     margin: 0;
     border-bottom:0px;
 }

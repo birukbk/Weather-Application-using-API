@@ -34,6 +34,8 @@
  			if ($('#cityName').attr("hidden")) {
 					$('#cityName').show();
 				}
+			//document.body.style.backgroundImage = "url('Bitmap.png')";
+			//document.getElementById("weatherInfo").style.backgroundImage = "url('Bitmap.png')";
  			$('#weatherInfo').empty().append(
  				'Weather Conditions: '+ weatherConditions + '</br>'+
  				'Temperature :'+ toCelsius(temprature) + '</br>'+
