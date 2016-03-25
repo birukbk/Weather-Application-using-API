@@ -28,7 +28,7 @@
  			
  		
 
- 			//display the choosen city and date from the requested data
+ 			//display the chosen city and date from the requested data
  			$('#cityName').empty().append('Weather for '+ city + ' on '+ toDD_MM_YY_format(date));
  			//display the city name div after the user choose country and city
  			if ($('#cityName').attr("hidden")) {
@@ -36,7 +36,7 @@
 				}
  			$('#weatherInfo').empty().append(
  				'Weather Conditions: '+ weatherConditions + '</br>'+
- 				'Temperature :'+ toCelssius(temprature) + '</br>'+
+ 				'Temperature :'+ toCelsius(temprature) + '</br>'+
  				'Wind Speed :'+ toMilesPerHour(windSpeed) + '</br>' +
  				'Wind Direction: ' + toTextualDescription(windDirection));
  			if ($('#weatherInfo').attr("hidden")) {
@@ -44,29 +44,46 @@
 				}
  		},
  		error: function(){
-				$('#info').html('<p> An earror has occoured, Please try again later</p>');
+				$('#info').html('<p> An error has occurred, Please try again later</p>');
 			}
  		
  	});
  }
-//convert temprature in kelvin to cellsius.
- function toCelssius(kelvin){
+
+/**
+ * convert temperature in kelvin to Celsius.
+ * @param  {temperate in kelvin}
+ * @return {temperature in Celsius concatenated with °C }
+ */
+ function toCelsius(kelvin){
  	var tempInCelsius=Math.round(kelvin-273.15);
  	return tempInCelsius +'°C';
  }
-
+/**
+ * converts speed in knots to miles per hour
+ * @param  {speed in Knots}
+ * @return {speed in mph concatenated with mph}
+ */
  function toMilesPerHour(knots){
  	var speedInMilesPerHour=  Math.round(knots * 1.15077945); //1 Knot = 1.15077945 mph
  	return speedInMilesPerHour + ' mph';
  }
-
+/**
+ * converts UNIX time stamp in to readable format
+ * @param  {Unix time stamp}
+ * @return {formatted date in DD-MM-YY format}
+ */
  function toDD_MM_YY_format(unixTimeStamp){
  	var d = new Date(unixTimeStamp * 1000);
  	var month = (d.getMonth())+1; //unix time stamp month starts from 0.
 	var formattedDate = d.getDate() + "-" + month + "-" + d.getFullYear();
 	return formattedDate;
  }
-
+ /**
+  * converts wind direction from degrees to textual description 
+  * @param  {wind direction in degrees}
+  * @return {textual description }
+  */
 function  toTextualDescription(degree){
 	if ((degree>337.5 && degree<360)|| (degree>22.5 && degree<22.5))
 	{return 'Northerly';}
