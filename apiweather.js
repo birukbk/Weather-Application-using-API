@@ -26,16 +26,8 @@
  			var windDirection=	response.wind.deg;
  			var date= response.dt;
  			var icon= response.weather[0].icon;
- 		
- 			
- 			var img = document.createElement("IMG");
-			img.src = 'http://openweathermap.org/img/w/'+icon+'.png';
-			$('#imgDiv').empty();
-			document.getElementById('imgDiv').appendChild(img);
 
-
- 			
- 		
+ 			displayWeatherIcon(icon);
 
  			//display the chosen city and date from the requested data
  			$('#cityName').empty().append('Weather for '+ city + ' on '+ toDD_MM_YY_format(date));
@@ -43,9 +35,6 @@
  			if ($('#cityName').attr("hidden")) {
 					$('#cityName').show();
 				}
-			
-			//document.body.style.backgroundImage = "url('Bitmap.png')";
-			//document.getElementById("icon").style.backgroundImage = "url('')";
 			
  			$('#weatherInfo').empty().append(
  				'Weather Conditions: '+ weatherConditions + '</br>'+ 
@@ -55,6 +44,7 @@
  			if ($('#weatherInfo').attr("hidden")) {
 					$('#weatherInfo').show();
 				}
+				displayWeatherIcon(icon);
  		},
  		error: function(){
 				$('#info').show().html('<p> An error has occurred, Please try again later</p>');
@@ -109,6 +99,12 @@ function  toTextualDescription(degree){
  	else if(degree>202.5 && degree<247.5){return 'South Westerly'}
  	else if(degree>247.5 && degree<292.5){return 'Westerly'}
  	else if(degree>292.5 && degree<337.5){return 'North Westerly'}
+}
+function displayWeatherIcon(iconID){
+	var img = document.createElement("IMG");
+	img.src = 'http://openweathermap.org/img/w/'+iconID+'.png';
+	$('#imgDiv').empty();
+	return document.getElementById('imgDiv').appendChild(img);
 }
 
 
