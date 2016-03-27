@@ -92,19 +92,19 @@
 function  toTextualDescription(degree){
 	if ((degree>337.5 && degree<360)|| (degree>22.5 && degree<22.5))
 	{return 'Northerly';}
- 	else if(degree>22.5 && degree<67.5){return 'North Easterly'}
- 	else if(degree>67.5 && degree<112.5){return 'Easterly'}
- 	else if(degree>122.5 && degree<157.5){return 'South Easterly'} 
- 	else if(degree>157.5 && degree<202.5){return 'Southerly'}
- 	else if(degree>202.5 && degree<247.5){return 'South Westerly'}
- 	else if(degree>247.5 && degree<292.5){return 'Westerly'}
- 	else if(degree>292.5 && degree<337.5){return 'North Westerly'}
+ 	else if(degree>22.5 && degree<67.5){return 'North Easterly';}
+ 	else if(degree>67.5 && degree<112.5){return 'Easterly';}
+ 	else if(degree>122.5 && degree<157.5){return 'South Easterly';} 
+ 	else if(degree>157.5 && degree<202.5){return 'Southerly';}
+ 	else if(degree>202.5 && degree<247.5){return 'South Westerly';}
+ 	else if(degree>247.5 && degree<292.5){return 'Westerly';}
+ 	else if(degree>292.5 && degree<337.5){return 'North Westerly';}
 }
 function displayWeatherIcon(iconID){
 	var img = document.createElement("IMG");
 	img.src = 'http://openweathermap.org/img/w/'+iconID+'.png';
 	$('#imgDiv').empty();
-	return document.getElementById('imgDiv').appendChild(img);
+	return $('#imgDiv').append(img);
 }
 
 
