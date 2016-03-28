@@ -5,15 +5,18 @@ background-repeat: no-repeat;
 /*border:5px solid gray;*/
 padding-left: 50px;
 padding-bottom: 50px;
-width: 900px;
+width: auto;
 height: 900px;
 }
 h1{
+    padding-top: 20px;
+    padding-left: 20px;
 	color: black;
     font-family: open-sans;
     font-weight: lighter;
 }
 h4{
+    
     color: black;
     font-family: open-sans;
     font-weight: lighter;
@@ -40,6 +43,9 @@ h4{
     /*border: 5px solid gray;*/
     margin: 0;
     border-bottom:0px;
+}
+#content{
+    padding-left: 20px;
 }
 
 
