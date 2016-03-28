@@ -1,9 +1,9 @@
  $(document).ready(function() {
      $('#countries').change(function() {
-         $('#counties').load($(this).val() + '-cities' + '.html');
+     $('#counties').load($(this).val() + '-cities' + '.html');
          $('#counties').change(function() {
              var selectedCounty = $(this).val();
-
+             var responseStatus = 'success';
              getData(selectedCounty);
          });
      });
@@ -30,26 +30,18 @@
              //display the chosen city and date from the requested data
              $('#cityName').empty().append('Weather for ' + city + ' on ' + toDD_MM_YY_format(date));
              //display the city name div after the user choose country and city
-             if ($('#cityName').attr("hidden")) {
-                 $('#cityName').show();
-             }
 
              $('#weatherInfo').empty().append(
                  'Weather Conditions: ' + weatherConditions + '</br>' +
                  'Temperature :' + toCelsius(temprature) + '</br>' +
                  'Wind Speed :' + toMilesPerHour(windSpeed) + '</br>' +
                  'Wind Direction: ' + toTextualDescription(windDirection));
-             if ($('#weatherInfo').attr("hidden")) {
-                 $('#weatherInfo').show();
-             }
              displayWeatherIcon(icon);
          },
          error: function() {
              $('#info').show().html('<p> An error has occurred, Please try again later</p>');
              $('#weatherInfo').empty();
-
          }
-
      });
  }
 
@@ -58,7 +50,6 @@
      var tempInCelsius = Math.round(kelvin - 273.15);
      return tempInCelsius + '°C';
  }
-
 
  //converts speed in knots to miles per hour(mph)
  function toMilesPerHour(knots) {
@@ -74,7 +65,7 @@
      return formattedDate;
  }
 
-//converts wind direction from degrees to textual description 
+ //converts wind direction from degrees to textual description
 function  toTextualDescription(degree){
 	if ((degree>337.5 && degree<360)|| (degree>22.5 && degree<22.5))
 	{return 'Northerly';}
