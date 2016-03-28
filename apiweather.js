@@ -39,7 +39,7 @@
              displayWeatherIcon(icon);
          },
          error: function() {
-             $('#info').show().html('<p> An error has occurred, Please try again later</p>');
+             $('#errorInfo').show().html('<p> An error has occurred, Please try again later</p>');
              $('#weatherInfo').empty();
          }
      });
