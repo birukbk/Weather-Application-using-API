@@ -15,8 +15,7 @@
          type: 'GET',
          dataType: 'json',
          success: function(response) {
-             console.log(JSON.stringify(response));
-
+            
              var city = response.name;
              var weatherConditions = response.weather[0].main;
              var temprature = response.main.temp;
