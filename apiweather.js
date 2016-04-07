@@ -53,18 +53,12 @@
      var formattedDate = d.getDate() + "-" + month + "-" + d.getFullYear();
      return formattedDate;
  }
-
- //converts wind direction from degrees to textual description
+//convert the wind direction from degree to textual description.
 function  toTextualDescription(degree){
-	if ((degree>337.5 && degree<360)|| (degree>22.5 && degree<22.5))
-	{return 'Northerly';}
- 	else if(degree>22.5 && degree<67.5){return 'North Easterly';}
- 	else if(degree>67.5 && degree<112.5){return 'Easterly';}
- 	else if(degree>122.5 && degree<157.5){return 'South Easterly';} 
- 	else if(degree>157.5 && degree<202.5){return 'Southerly';}
- 	else if(degree>202.5 && degree<247.5){return 'South Westerly';}
- 	else if(degree>247.5 && degree<292.5){return 'Westerly';}
- 	else if(degree>292.5 && degree<337.5){return 'North Westerly';}
+var sectors = ['Northerly','North Easterly','Easterly','South Easterly','Southerly','South Westerly','Westerly','North Westerly'];
+  degree += 22.5;
+  var which = parseInt(degree / 45);
+  return sectors[which%8];
 }
 //displays the corrosponding weather icon to weather condetion
 function displayWeatherIcon(iconID) {
