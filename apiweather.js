@@ -15,27 +15,17 @@
          type: 'GET',
          dataType: 'json',
          success: function(response) {
-            
-             var city = response.name;
-             var weatherConditions = response.weather[0].main;
-             var temprature = response.main.temp;
-             var windSpeed = response.wind.speed;
-             var windDirection = response.wind.deg;
-             var date = response.dt;
-             var icon = response.weather[0].icon;
-
-             displayWeatherIcon(icon);
-
+         
              //display the chosen city and date from the requested data
-             $('#cityName').empty().append('Weather for ' + city + ' on ' + toDD_MM_YY_format(date));
+             $('#cityName').empty().append('Weather for ' + response.name + ' on ' + toDD_MM_YY_format(response.dt));
              //display the city name div after the user choose country and city
 
              $('#weatherInfo').empty().append(
-                 'Weather Conditions: ' + weatherConditions + '</br>' +
-                 'Temperature :' + toCelsius(temprature) + '</br>' +
-                 'Wind Speed :' + toMilesPerHour(windSpeed) + '</br>' +
-                 'Wind Direction: ' + toTextualDescription(windDirection));
-             displayWeatherIcon(icon);
+                 'Weather Conditions: ' + response.weather[0].main + '</br>' +
+                 'Temperature :' + toCelsius(response.main.temp) + '</br>' +
+                 'Wind Speed :' + toMilesPerHour(response.wind.speed) + '</br>' +
+                 'Wind Direction: ' + toTextualDescription(response.wind.deg));
+             displayWeatherIcon(response.weather[0].icon);
          },
          error: function() {
              $('#errorInfo').show().html('<p> An error has occurred, Please try again later</p>');
